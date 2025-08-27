@@ -1,0 +1,29 @@
+name: sku-factory
+on:
+  schedule:
+    - cron: "0 6 * * 1-6"
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python scripts/fetch_sources.py
+      - run: python scripts/build_assets.py
+      - run: python scripts/make_anki.py
+      - run: python scripts/make_pdfs.py
+      - run: python scripts/generate_listings.py
+      - run: python publisher/push_gumroad.py || true
+      - run: python publisher/push_payhip.py || true
+      - name: Commit artifacts
+        run: |
+          git config user.name "sku-bot"
+          git config user.email "bot@noreply"
+          git add -A
+          git commit -m "auto: update products and site" || echo "no changes"
+          git push || true
