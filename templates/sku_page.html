@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}" />
+</head>
+<body>
+  <main>
+    <h1>{{title}}</h1>
+    <p><em>SKU:</em> {{sku}} | <em>Lane:</em> {{lane}}</p>
+    <img alt="cover" src="../../{{cover_rel}}" style="max-width:640px;display:block;margin:1rem 0;" />
+    <h2>What you get</h2>
+    <ul>
+      {{includes_list}}
+    </ul>
+    <h2>How to use</h2>
+    <ol>
+      <li>Open CSV files in Excel/Google Sheets or import into Notion.</li>
+      <li>Import TSV into Anki as Basic flashcards.</li>
+      <li>Print the printable markdown to PDF if needed.</li>
+    </ol>
+    <h2>Sources & License</h2>
+    <p>{{source}}</p>
+    <p>{{license}}</p>
+    <hr />
+    <p>(c) {{year}} YourBrand - This is a compiled product built from public resources.</p>
+    <p><a href="../index.html">&larr; Back to all products</a></p>
+  </main>
+</body>
+</html>

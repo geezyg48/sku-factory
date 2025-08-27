@@ -1,0 +1,6 @@
+control_id,statement,category
+AC-1,Establish access control policies and procedures.,Access Control
+AC-2,Account management with approvals and reviews.,Access Control
+IA-2,Multi-factor authentication for network access.,Identification and Authentication
+SC-7,Boundary protection and segmentation.,System and Communications Protection
+CM-2,Baseline configuration documentation.,Configuration Management
